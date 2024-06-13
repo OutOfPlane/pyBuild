@@ -1,0 +1,37 @@
+{
+    "name": "example Project",
+    "version": "1.0",
+    "outputs":[
+        {
+            "name": "stm32l412",
+            "cpu": "cortex-m4",
+            "output_dir": "build/",
+            "linker_file": "project/STM32L412KBUX_FLASH.ld",
+            "start_address": "0x08000000",
+            "build_order": [
+                "project/system/",
+                "project/hal/",
+                "project/lib/*",
+                "project/main/"
+            ],
+            "defines": [
+                "CORE_CM4"
+            ],
+            "build_flags": [
+                "-g",
+                "-mfpu=fpv5-d16",
+                "-mfloat-abi=hard",
+                "-mthumb",
+                "--specs=nosys.specs"
+            ]            
+        }
+    ],    
+    "defines": [
+        "STM32L412xx"
+    ],
+    "build_flags": [
+        "-Wall",
+        "-Werror"
+    ]
+    
+}

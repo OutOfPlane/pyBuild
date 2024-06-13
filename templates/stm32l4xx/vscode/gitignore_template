@@ -1,0 +1,11 @@
+*.o
+*.elf
+*.map
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.png
+*.puml
+*.uml
+*.pyc

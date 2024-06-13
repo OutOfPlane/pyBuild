@@ -1,0 +1,62 @@
+{
+    "name": "example Project",
+    "version": "1.0",
+    "outputs":[
+        {
+            "name": "CM7",
+            "cpu": "cortex-m7",
+            "output_dir": "build_cm7/",
+            "linker_file": "project/cm7.ld",
+            "start_address": "0x08000000",
+            "build_order": [
+                "project/system/",
+                "project/global/",
+                "project/hal/",
+                "project/lib/*",
+                "project/main_cm7/"
+            ],
+            "defines": [
+                "CORE_CM7"
+            ],
+            "build_flags": [
+                "-g",
+                "-mfpu=fpv5-d16",
+                "-mfloat-abi=hard",
+                "-mthumb",
+                "--specs=nosys.specs"
+            ]            
+        },
+        {
+            "name": "CM4",
+            "cpu": "cortex-m4",
+            "output_dir": "build_cm4/",
+            "linker_file": "project/cm4.ld",
+            "start_address": "0x08100000",
+            "build_order": [
+                "project/system/",
+                "project/global/",
+                "project/hal/",
+                "project/lib/dummylib/",
+                "project/main_cm4/"
+            ],
+            "defines": [
+                "CORE_CM4"
+            ],
+            "build_flags": [
+                "-g",
+                "-mfpu=fpv4-sp-d16",
+                "-mfloat-abi=hard",
+                "-mthumb",
+                "--specs=nosys.specs"
+            ]            
+        }
+    ],    
+    "defines": [
+        "STM32H745xx"
+    ],
+    "build_flags": [
+        "-Wall",
+        "-Werror"
+    ]
+    
+}

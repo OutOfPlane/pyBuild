@@ -1,0 +1,136 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "DEBUG CM7 ST-Link",
+            "cwd": "${workspaceFolder}",
+            "type": "cortex-debug",
+            "executable": "${workspaceFolder}/CM7.elf",
+            "loadFiles": [
+                "${workspaceFolder}/CM7.elf"
+            ],
+            "request": "launch",
+            "servertype": "stlink",
+            "device": "STM32H745",
+            "interface": "swd",
+            // "runToEntryPoint": "main",
+            "svdFile": "${workspaceFolder}/svd/STM32H745_CM7.svd",
+            "v1": false,
+            "showDevDebugOutput": "both",
+            "serverArgs": [
+                "-l",
+                "1",
+                "-m",
+                "0",
+                "-k",
+                "-t",
+                "-s"
+            ],
+            "stm32cubeprogrammer": "${config:stlinkprog}",
+            "gdbPath": "${config:gdbpath}",
+            "stlinkPath": "${config:stlinkpath}"
+        },
+        {
+            "name": "DEBUG CM4 ST-Link",
+            "cwd": "${workspaceFolder}",
+            "type": "cortex-debug",
+            "executable": "${workspaceFolder}/CM4.elf",
+            "loadFiles": [
+                "${workspaceFolder}/CM4.elf"
+            ],
+            "request": "launch",
+            "servertype": "stlink",
+            "device": "STM32H745",
+            "interface": "swd",
+            // "runToEntryPoint": "main",
+            "svdFile": "${workspaceFolder}/svd/STM32H745_CM7.svd",
+            "v1": false,
+            "showDevDebugOutput": "both",
+            "serverArgs": [
+                "-l",
+                "1",
+                "-m",
+                "3",
+                "-t",
+                "-s"
+            ],
+            "stm32cubeprogrammer": "${config:stlinkprog}",
+            "gdbPath": "${config:gdbpath}",
+            "stlinkPath": "${config:stlinkpath}"
+        },
+        {
+            "name": "ATTACH CM4 ST-Link",
+            "cwd": "${workspaceFolder}",
+            "type": "cortex-debug",
+            "executable": "${workspaceFolder}/CM4.elf",
+            "loadFiles": [
+                "${workspaceFolder}/CM4.elf"
+            ],
+            "request": "launch",
+            "servertype": "stlink",
+            "device": "STM32H745",
+            "interface": "swd",
+            // "runToEntryPoint": "main",
+            "svdFile": "${workspaceFolder}/svd/STM32H745_CM4.svd",
+            "v1": false,
+            "showDevDebugOutput": "both",
+            "serverArgs": [
+                "-l",
+                "1",
+                "-m",
+                "3",
+                "-t",
+                "-s"
+            ],
+            "stm32cubeprogrammer": "${config:stlinkprog}",
+            "gdbPath": "${config:gdbpath}",
+            "stlinkPath": "${config:stlinkpath}"
+        },
+        {
+            "name": "DBG CM7/CM4 ST-Link",
+            "cwd": "${workspaceFolder}",
+            "type": "cortex-debug",
+            "executable": "${workspaceFolder}/CM7.elf",
+            "loadFiles": [
+                "${workspaceFolder}/CM7.elf",
+                "${workspaceFolder}/CM4.elf"
+            ],
+            "request": "launch",
+            "servertype": "stlink",
+            "device": "STM32H745",
+            "interface": "swd",
+            // "runToEntryPoint": "main",
+            "svdFile": "${workspaceFolder}/svd/STM32H745_CM7.svd",
+            "v1": false,
+            "showDevDebugOutput": "both",
+            "serverArgs": [
+                "-l",
+                "1",
+                "-m",
+                "0",
+                "-k",
+                "-t",
+                "-s"
+            ],
+            "stm32cubeprogrammer": "${config:stlinkprog}",
+            "gdbPath": "${config:gdbpath}",
+            "stlinkPath": "${config:stlinkpath}",
+            "chainedConfigurations": {
+                "enabled": true,
+                "waitOnEvent": "postInit",
+                "detached": true,
+                "delayMs": 5000, // Wait 5s, could be optimized
+                "lifecycleManagedByParent": true,
+                "launches": [
+                    {
+                        "name": "ATTACH CM4 ST-Link",
+                        "folder": "${workspaceFolder}"
+                    }
+                ]
+            }
+        }
+    ]
+}

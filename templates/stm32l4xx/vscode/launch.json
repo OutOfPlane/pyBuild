@@ -1,0 +1,34 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "DEBUG with ST-Link",
+            "cwd": "${workspaceFolder}",
+            "type": "cortex-debug",
+            "executable": "${workspaceFolder}/stm32l412.elf",
+            "loadFiles": [
+                "${workspaceFolder}/stm32l412.elf"
+            ],
+            "request": "launch",
+            "servertype": "stlink",
+            "device": "STM32L412",
+            "interface": "swd",
+            "runToEntryPoint": "main",
+            "svdFile": "${workspaceFolder}/svd/STM32L412.svd",
+            "v1": false,
+            "showDevDebugOutput": "both",
+            "serverArgs": [
+                "-l",
+                "1",
+                "-k",
+                "-s"
+            ],
+            "stm32cubeprogrammer": "${config:stlinkprog}",
+            "gdbPath": "${config:gdbpath}",
+            "stlinkPath": "${config:stlinkpath}"
+        }
+    ]
+}

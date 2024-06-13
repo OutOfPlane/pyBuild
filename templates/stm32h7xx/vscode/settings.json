@@ -1,0 +1,6 @@
+{
+    "winpypath": "\\\\ipms.fraunhofer.de\\data\\PRJ\\AMS\\Elektronik_Syn\\C_common\\sw_tools\\winpython\\3.12.3\\python.exe",
+    "gdbpath": "\\\\ipms.fraunhofer.de\\data\\PRJ\\AMS\\Elektronik_Syn\\C_common\\sw_tools\\gcc-arm-none-eabi\\10.3\\bin\\arm-none-eabi-gdb.exe",
+    "stlinkpath": "\\\\ipms.fraunhofer.de\\data\\PRJ\\AMS\\Elektronik_Syn\\C_common\\sw_tools\\stm32_stlink_gdbserver\\1.6.0\\bin\\ST-LINK_gdbserver.exe",
+    "stlinkprog": "\\\\ipms.fraunhofer.de\\data\\PRJ\\AMS\\Elektronik_Syn\\C_common\\sw_tools\\stm32_cubeprogrammer\\1.6.0\\bin\\"
+}
